@@ -8,7 +8,7 @@ I will describe the following:
 2. Creating the Report
 3. Data Insights
 
-You can review the [dashboard here](https://console.cloud.google.com/marketplace/product/united-states-census-bureau/acs).
+You can review the [dashboard here](https://datastudio.google.com/reporting/b6b7d413-8f17-4343-9aad-39298d053f9e/page/GogaC).
 
 ## Garnering the Data
 
