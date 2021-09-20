@@ -18,7 +18,7 @@ You can review the [dashboard here](https://console.cloud.google.com/marketplace
 
 - This data was then loaded into [BigQuery](https://cloud.google.com/bigquery/docs/introduction) as a temporary table. I then used BigQuery SQL to make a few data structure modifications. 
 
-- I then used this data and joined it to the [US Census tract](https://console.cloud.google.com/marketplace/product/united-states-census-bureau/acs) to determine the geographical polygon.
+- I then used this data and joined it to the [US Census tract](https://console.cloud.google.com/marketplace/product/united-states-census-bureau/acs) data to determine the geographical polygon.
 
 ## Creating the Report
 
@@ -32,7 +32,7 @@ You can review the [dashboard here](https://console.cloud.google.com/marketplace
 
 ### Scenario
 
-If this high-end security company knows their typical customer makes over $85k a year -- we will use the dashboard to assess which region makes the most sense to spend out marketing dollars.
+If this high-end security company knows their typical customer makes over $85k a year -- we will use the dashboard to assess which region makes the most sense to spend our marketing dollars.
 
 1. If we use the dashboard and filter down to tracts that make over $85k, we can then rank them based on occurence of crime in the area.
 
