@@ -1,3 +1,16 @@
+with total_crimes_geo as
+(
+SELECT 
+  geo_id, 
+  count(1) total_crimes 
+FROM 
+  `connelld-app-services.nashville_data.crime_census` 
+where 
+  extract(year from Call_Received) = 2020 
+group by 
+  geo_id
+  )
+--
 select 
   ct.state_fips_code, 
   ct.county_fips_code, 
@@ -43,21 +56,7 @@ from
     ct.state_fips_code || ct.county_fips_code
   ) = c.geo_id 
   left join `bigquery-public-data.census_bureau_acs.censustract_2018_5yr` acs on ct.geo_id = acs.geo_id 
-  join (
-    SELECT 
-      geo_id, 
-      count(1) total_crimes 
-    FROM 
-      `connelld-app-services.nashville_data.crime_census` 
-    where 
-      extract(
-        year 
-        from 
-          Call_Received
-      ) = 2020 
-    group by 
-      geo_id
-  ) x on ct.geo_id = x.geo_id 
+  left join total_crimes_geo on ct.geo_id = total_crimes_geo.geo_id 
 where 
   c.county_name = 'Davidson' 
 order by 

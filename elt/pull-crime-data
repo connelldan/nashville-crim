@@ -16,7 +16,12 @@ bq --location=US load \
     --source_format=CSV \
     connelld-app-services:nashville_data.crime_temp \
     gs://nashville-crime-data/$FILE \
-    Event_Number:STRING,Call_Received:STRING,Complaint_Number:STRING,Tencode:STRING,Tencode_Description:STRING,Tencode_Suffix:STRING,Tencode_Suffix_Description:STRING,Disposition_Code:STRING,Disposition_Description:STRING,Block:STRING,Street_Name:STRING,Unit_Dispatched:STRING,Shift:STRING,Sector:STRING,Zone:STRING,RPA:STRING,Latitude:FLOAT64,Longitude:FLOAT64,Mapped_Location:GEOGRAPHY
+    Event_Number:STRING,Call_Received:STRING,Complaint_Number:STRING, \
+    Tencode:STRING,Tencode_Description:STRING,Tencode_Suffix:STRING, \
+    Tencode_Suffix_Description:STRING,Disposition_Code:STRING, \
+    Disposition_Description:STRING,Block:STRING,Street_Name:STRING, \
+    Unit_Dispatched:STRING,Shift:STRING,Sector:STRING,Zone:STRING,RPA:STRING, \
+    Latitude:FLOAT64,Longitude:FLOAT64,Mapped_Location:GEOGRAPHY
 
 # transform string timestamp to new table
 bq --location=US query \
