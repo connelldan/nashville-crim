@@ -1,6 +1,5 @@
 with total_crimes_geo as
-(
-SELECT 
+(SELECT 
   geo_id, 
   count(1) total_crimes 
 FROM 
@@ -8,8 +7,7 @@ FROM
 where 
   extract(year from Call_Received) = 2020 
 group by 
-  geo_id
-  )
+  geo_id)
 --
 select 
   ct.state_fips_code, 
